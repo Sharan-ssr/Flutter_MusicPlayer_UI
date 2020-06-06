@@ -51,8 +51,14 @@ class Playlist extends StatelessWidget {
                   ],
                 ),
               ),
-              PlayListCard(Colors.blue, "My Playlist", "125 songs"),
-              PlayListCard(Colors.pink, "Melody", "75 songs"),
+              PlayListCard(
+                  "https://i.pinimg.com/originals/d3/b1/25/d3b1252338c0461134e34aa7f902552e.jpg",
+                  "My Playlist",
+                  "125 songs"),
+              PlayListCard(
+                  "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/123516231/original/f7c4a574a4c693e43c00d1829cf5a6a15505ae2f/create-custom-spotify-or-apple-music-playlist-covers.jpeg",
+                  "Melody",
+                  "75 songs"),
             ],
           ),
           NowPlaying()
@@ -63,10 +69,10 @@ class Playlist extends StatelessWidget {
 }
 
 class PlayListCard extends StatelessWidget {
-  final Color icon;
+  final String url;
   final String ply_name;
   final String song_numbers;
-  PlayListCard(this.icon, this.ply_name, this.song_numbers);
+  PlayListCard(this.url, this.ply_name, this.song_numbers);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -83,7 +89,9 @@ class PlayListCard extends StatelessWidget {
             Container(
               height: 40,
               width: 40,
-              color: icon,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: NetworkImage("$url"), fit: BoxFit.cover)),
             ),
             Container(
               padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
