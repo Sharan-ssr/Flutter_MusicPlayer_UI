@@ -44,7 +44,10 @@ class Settings extends StatelessWidget {
                                 color: Colors.white,
                               ),
                               borderRadius: BorderRadius.circular(50),
-                              color: Colors.red),
+                              image: DecorationImage(
+                                  image: NetworkImage(
+                                      "https://avatars2.githubusercontent.com/u/31183466?s=460&u=a23ddbbc8bf1ad44a3334eb2261038c6acd9312c&v=4"),
+                                  fit: BoxFit.cover)),
                         ),
                       ),
                     ],
